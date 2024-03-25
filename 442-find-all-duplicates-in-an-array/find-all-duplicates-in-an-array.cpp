@@ -2,21 +2,13 @@ class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
         int maxi=INT_MIN;
-        for(int i=0;i<nums.size();i++)
-        {
-            maxi=max(maxi,nums[i]);
-        }
-        vector<int> hasharr;
-        for(int i=0;i<=maxi;i++)
-        {
-            hasharr.push_back(0);
-        }
+        vector<int> hasharr(nums.size()+1,0);   
         for(int i=0;i<nums.size();i++)
         {
             hasharr[nums[i]]++;
         }
         vector<int> ans;
-        for(int i=1;i<=maxi;i++)
+        for(int i=1;i<=nums.size();i++)
         {
             if(hasharr[i]==2) ans.push_back(i);
         }
