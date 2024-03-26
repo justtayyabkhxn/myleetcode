@@ -1,7 +1,7 @@
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
-        int n= size(nums);
+        int n= nums.size();
        
         for(int i=0;i<n;i++){
             int x=nums[i]; // x = current element
